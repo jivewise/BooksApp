@@ -1,0 +1,55 @@
+@function img-url($url) {
+    @return url('../images/#{$url}');
+}
+
+@function font-url($url) {
+    @return url('../fonts/#{$url}');
+}
+
+@font-face {
+    font-family: 'IconicFill';
+    src: font-url('iconic_fill.eot');
+    src: font-url('iconic_fill.eot?#iefix') format('embedded-opentype'), font-url('iconic_fill.ttf') format('truetype'), font-url('iconic_fill.svg#iconic') format('svg');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Dancing Script'), local('DancingScript'), font-url('dancingscript.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Josefin Sans'), local('JosefinSans'), font-url('josefinsans.woff') format('woff');
+}
+
+@mixin action-button() {
+    display: block;
+    font-size: 32px;
+    height: 2em;
+    color: white;
+    line-height: 2em;
+    background: img-url('action-btn.png') 0 0 repeat-x;
+    background-size: contain;
+    padding: 0px 20px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px #444;
+    text-decoration: none;
+}
+
+@mixin wy_blue_button {
+    display: block;
+    text-align: center;
+    background: #5CAAE6;
+    color: white !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    outline: none;
+    text-decoration: none;
+}

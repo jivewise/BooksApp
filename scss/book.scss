@@ -1,0 +1,684 @@
+@import "mixins";
+@import "compass/css3";
+* {
+    margin: 0;
+    padding: 0;
+}
+.iconic {
+    display:inline-block;
+    font-family: 'IconicFill';
+}
+
+body {
+    background:img-url('wood.jpg') 50% 0 no-repeat;
+}
+
+a,
+span,
+button,
+div {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div#pages {
+    position:relative;
+    width:100%;
+    height:100%;
+    margin:0;
+
+    div.page {
+        background: #fff img-url('book_inner_gradient.jpg') 50% 0 repeat-y scroll;
+        background-size: 600px 20px;
+    }
+
+    div.bb-item,
+    div.bb-inner {
+        img.page-background {
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+        div.left-grad {
+            left:0;
+            width:50%;
+            height:100%;
+//            @include background-image(linear-gradient(rgba(90,90,90,.4), rgba(255, 255, 255, .2) 40%, rgba(0,0,0,.0) 100%));
+            // background: transparent url("../images/shadow-top-forward.png") 120px 0 repeat-y;
+            position:absolute;
+            z-index:2;
+
+        }
+        div.right-grad {
+            right:0;
+            width:50%;
+            height:100%;
+//            @include background-image(linear-gradient(to right, rgba(70,70,70,.6), rgba(255, 255, 255, 0.3) 40%, rgba(0, 0, 0, 0) 100%));
+            background: transparent url("../images/shadow-top-back.png") 0 0 repeat-y;
+            position:absolute;
+            z-index:2;
+        }
+
+    }
+    div.page.blank {
+        left:0;
+    }
+}
+
+// #s the last page redesign version 2.0
+div#pages div.bb-item div.last-page {
+    font-family:"Josefin Sans", sans-serif;
+    font-size: 48px;
+    text-align: center;
+    /*delete the gradient cover on the last page*/
+    div.left-grad, div.right-grad {
+        background: transparent;
+    }
+    div.left-grad {
+        font-size: 48px;
+        .rating-stars {
+            color: gold;
+            text-shadow: 0 0 1px rgba(0,0,0,.5);
+            margin-top: 30%;
+        }
+        .rate-this-app {
+            @include wy-blue-button;
+            display: inline-block;
+            background: #5CAAE6 url("../images/action-btn.png") 0 0 repeat-x;
+            background-size: contain;
+            box-shadow: 1px 1px 3px #444;
+            border-radius: 3px;
+            padding: 20px 30px;
+            margin-top: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 300px;
+            font-size: 28px;
+        }
+    }
+    div.right-grad {
+        .the-end {
+            font-family: "Dancing Script", serif;
+            font-size: 48px;
+            margin-top: 30%;
+        }
+        .read-again {
+            @include wy-blue-button;
+            display: inline-block;
+            background: #5CAAE6 url("../images/action-btn.png") 0 0 repeat-x;
+            background-size: contain;
+            box-shadow: 1px 1px 3px #444;
+            border-radius: 3px;
+            padding: 20px 30px;
+            margin-top: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 300px;
+            font-size: 28px;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    div#pages div.bb-item div.last-page {
+        div.left-grad {
+            font-size: 28px;
+            .rate-this-app {
+                font-size: 24px;
+                padding: 10px 15px;
+                margin-top: 14%;
+            }
+        }
+        div.right-grad {
+            .the-end {
+                font-size: 36px;
+            }
+            .read-again {
+                font-size: 24px;
+                padding: 10px 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    div#pages div.bb-item div.last-page {
+        div.left-grad {
+            font-size: 16px;
+            .rating-stars {
+                margin-top: 40%;
+            }
+            .rate-this-app {
+                margin-top: 20%;
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+        div.right-grad {
+            .the-end {
+                font-size: 32px;
+            }
+            .read-again {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+#real-feedback-submit-button {
+    display: none; // this can only be 'triggered' by jquery
+}
+
+#server-check-results {
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #555;
+    box-sizing: border-box;
+    padding: 5px;
+    padding-top: 10px;
+    display: none; // show it only after sending feedback successfully
+}
+@media (min-width: 768px) {
+    #server-check-results {
+        width: 100%;
+        height: 100%;
+        font-size: 1.8em;
+        font-weight: normal;
+        color: #555;
+        padding: 10px;
+        padding-top: 20px;
+    }
+}
+
+#input-check-error {
+    width: 100%;
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: normal;
+    color: #fff;
+    background: #d36;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+@media (min-width: 480px) {
+    #input-check-error {
+        width: 90%;
+        font-size: 14px;
+        line-height: 20px;
+        border-radius: 3px;
+        left: 8px;
+        top: 10px;
+    }
+}
+@media (min-width: 768px) {
+    #input-check-error {
+        width: 70%;
+        font-size: 16px;
+        line-height: 20px;
+        border-radius: 3px;
+        left: 38px;
+    }
+}
+@media (min-width: 1024px) {
+    #input-check-error {
+        width: 52%;
+        font-size: 18px;
+        line-height: 24px;
+        border-radius: 5px;
+        left: 92px;
+    }
+}
+
+// #s textblock default
+div.text-block {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    z-index:3;
+    position:absolute;
+    font-family:"Josefin Sans", sans-serif;
+    font-size:18px;
+    p {
+        line-height: 1.5em;
+        margin: 0;
+        margin-bottom: .3em;
+
+        span:hover {
+            cursor: pointer;
+
+        }
+        span.highlight-span {
+            font-weight: bold;
+            background: #f70;
+            padding: 0 7px 7px 7px;
+            border-radius: 3px;
+            line-height: 22px;
+
+            @media (max-width: 1023px) {
+                padding: 0 6px 5px 6px;
+                border-radius: 2px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    @media all and (max-width:479px)  {
+        margin-top:225px;
+    }
+}
+// #e textblock default
+
+
+// #s div#book-outer & div.book-inner version 2.0
+// the following number are calculated accurately and are all related
+// please do not modify individually
+@media all {
+    div#book-outer {
+        width: 300px;
+        height: 226px;  // so the book inner has a 8px margin as we see
+        position: relative;
+        // the text/image may be covered from the bottom;
+        // 30 is 'controls' height, 120 is textblock max height
+        margin: 5px auto 150px;
+        // background color picked from 'controls'
+        background:#c30 img-url('book_cover_background_cube.png') 0 0 repeat scroll;
+        @media (min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5) {
+            background:#c30 img-url('book_cover_background_vertical_452@2x.png') 0 0 repeat-x scroll;
+            background-size: contain;
+        }
+        // book shadow & cover rim
+        box-shadow: 0 0 10px rgba(0,0,0,.5),
+        inset 0 1px 1px rgba(255,255,255,.3),
+        inset 1px 0 1px rgba(0,0,0,.3),
+        inset -1px 0 1px rgba(0,0,0,.3),
+        inset 0 -1px 1px rgba(0,0,0,.3);
+    }
+    div.book-inner {
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(blue), to(red));
+        position: absolute;
+        margin: 8px 10px; // page rim of bellow is 2px
+        width: 280px;
+        height: 210px;
+        box-shadow: 1px 0 rgb(255,255,255), -1px 0 rgb(255,255,255),
+        2px 0 rgb(200,200,200),-2px 0 rgb(200,200,200),
+        0 0 5px rgba(0,0,0,.5);
+    }
+    div.book-inner:after,div.book-inner:before {
+        content:'';
+        position: absolute;
+        display: block;
+        background: #9F2801;
+        width: 20px;
+        height: 8px;
+        left: 130px;
+    }
+    div.book-inner:after {
+        top: -8px;
+        box-shadow:inset 0 1px 1px rgba(255,255,255,.3), inset 1px 0 1px rgba(0,0,0,.3), inset -1px 0 1px rgba(0,0,0,.3);
+
+    }
+    div.book-inner:before {
+        bottom: -8px;
+        box-shadow: inset -1px 0 1px rgba(0,0,0,.3), inset 0 -1px 1px rgba(0,0,0,.3), inset 1px 0 1px rgba(0,0,0,.3);
+    }
+}
+
+@media (min-width: 480px) {
+    div#book-outer {
+        width: 460px;
+        height: 346.5px; // +1.5
+        // targeted to ipad 3 and above
+        @media (min-device-pixel-ratio : 1.5), (-webkit-min-device-pixel-ratio : 1.5) {
+            background:#c30 img-url('book_cover_background_vertical_690@2x.png') 0 0 repeat-x scroll;
+            background-size: contain;
+        }
+        // the text/image may be covered from the bottom;
+        // 30 is 'controls' height, 5 is shadow
+        margin: 5px auto 35px;
+        box-shadow: 0 0 20px rgba(0,0,0,.5),
+        inset 0 2px 2px rgba(255,255,255,.3),
+        inset 2px 0 2px rgba(0,0,0,.3),
+        inset -2px 0 2px rgba(0,0,0,.3),
+        inset 0 -2px 2px rgba(0,0,0,.3);
+    }
+    div.book-inner {
+        width: 430px;
+        height: 322.5px;
+        margin: 12px 15px; // page rim of bellow is 3px
+        box-shadow: 1px 0 rgb(255,255,255), -1px 0 rgb(255,255,255),
+        2px 0 rgb(200,200,200),-2px 0 rgb(200,200,200),
+        3px 0 rgb(255,255,255), -3px 0 rgb(255,255,255),
+        0 0 6px rgba(0,0,0,.3);
+    }
+    div.book-inner:after, div.book-inner:before {
+        width: 30px;
+        height: 12px;
+        left: 200px;
+    }
+    div.book-inner:after {
+        top: -12px;
+    }
+    div.book-inner:before {
+        bottom: -12px;
+    }
+}
+
+@media (min-width: 768px) {
+    div#book-outer {
+        width: 748px;
+        height: 563px; // +2
+        // targeted to ipad 3 and above
+        @media (min-device-pixel-ratio : 1.5), (-webkit-min-device-pixel-ratio : 1.5) {
+            background:#c30 img-url('book_cover_background_vertical_561@2x.png') 0 0 repeat-x scroll;
+            background-size: contain;
+        }
+        // the text/image may be covered from the bottom;
+        // 30 is 'controls' height, 5 is shadow, enlarge margin-top
+        margin: 10px auto 70px;
+        box-shadow: 0 0 20px rgba(0,0,0,.5),
+        inset 0 3px 3px rgba(255,255,255,.3),
+        inset 3px 0 3px rgba(0,0,0,.2),
+        inset -3px 0 3px rgba(0,0,0,.2),
+        inset 0 -3px 3px rgba(0,0,0,.2);
+    }
+    div.book-inner {
+        width: 708px;
+        height: 531px;
+        margin: 16px 20px; // page rims of bellow is 4px
+        box-shadow: 1px 0 rgb(200,200,200),-1px 0 rgb(200,200,200),
+        2px 0 rgb(255,255,255), -2px 0 rgb(255,255,255),
+        3px 0 rgb(200,200,200), -3px 0 rgb(200,200,200),
+        4px 0 rgb(255,255,255), -4px 0 rgb(255,255,255),
+        0 0 8px rgba(0,0,0,.3),
+        8px 0 8px rgba(0,0,0,.3), -8px 0 8px rgba(0,0,0,.3);
+    }
+    div.book-inner:after, div.book-inner:before {
+        width: 40px;
+        height: 16px;
+        left: 334px;
+    }
+    div.book-inner:after {
+        top: -16px;
+        box-shadow: inset 2px 0 2px rgba(0,0,0,.3), inset -2px 0 2px rgba(0,0,0,.3), inset 0 2px -2px rgba(255,255,255,.3);
+    }
+    div.book-inner:before {
+        bottom: -16px;
+        box-shadow: inset 2px 2px 2px rgba(0,0,0,.3), inset -2px 0 2px rgba(0,0,0,.3);
+    }
+}
+
+@media (min-width: 1024px) {
+    div#book-outer {
+        width: 960px;
+        height: 725px; // +5
+    }
+    div.book-inner {
+        width: 900px;
+        height: 675px;
+        margin: 25px 30px; // page rims of bellow is 5px
+        box-shadow: 1px 0 rgb(200,200,200),-1px 0 rgb(200,200,200),
+        2px 0 rgb(255,255,255), -2px 0 rgb(255,255,255),
+        3px 0 rgb(200,200,200), -3px 0 rgb(200,200,200),
+        4px 0 rgb(255,255,255), -4px 0 rgb(255,255,255),
+        5px 0 rgb(200,200,200), -5px 0 rgb(200,200,200),
+        0 0 9px rgba(0,0,0,.3),
+        9px 0 9px rgba(0,0,0,.3), -9px 0 9px rgba(0,0,0,.3);
+    }
+    div.book-inner:after, div.book-inner:before {
+        width: 60px;
+        height: 25px;
+        left: 420px;
+    }
+    div.book-inner:after {
+        top: -25px;
+    }
+    div.book-inner:before {
+        bottom: -25px;
+    }
+}
+
+// #e div#book-outer & div.book-inner version 2.0
+
+
+// #s overlay
+div.overlay {
+    @include box-shadow(0px -15px 15px -15px #333);
+
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:60px;
+    text-align: center;
+
+    background:#c30;
+    z-index:100000;
+
+    .prev-page:before {
+        content:'\2190'
+    }
+    .next-page:before {
+        content:'\2192';
+    }
+
+    .paused:active,
+    .playing:active,
+    .prev-page:active,
+    .next-page:active{
+        color:#ddd;
+    }
+    .paused:hover,
+    .playing:hover,
+    .prev-page:hover,
+    .next-page:hover{
+        color:#333;
+    }
+
+    .paused.inactive,
+    .playing.inactive,
+    .prev-page.inactive,
+    .next-page.inactive{
+        color:#c00;
+    }
+
+    .paused, .playing, .prev-page, .next-page {
+        color:#eee;
+        float:right;
+        font-size:60px;
+        display:block;
+        height:100%;
+        line-height:100%;
+        margin-left:50px;
+    }
+    .paused:before {
+        content:'\e047';
+        font-size: 100px;
+        margin-left: 15px;
+    }
+    .playing:before {
+        content:'\e049';
+    }
+    .paused, .playing {
+        @include box-shadow(0px -15px 15px -15px #333);
+
+        float: left;
+        font-size: 90px;
+        width: 130px;
+        height: 130px;
+        background: inherit;
+        box-sizing: border-box;
+        padding: 20px;
+        margin: -60px 0 0 -15px;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width:767px) {
+    div.overlay {
+        height:40px;
+
+        .paused, .playing, .prev-page, .next-page {
+            font-size:40px;
+        }
+        .paused:before {
+            font-size: 47px;
+            margin-left: 10px;
+        }
+        .paused, .playing {
+            font-size: 40px;
+            width: 75px;
+            height: 75px;
+            padding: 15px;
+            margin: -35px 0 0 -12px;
+        }
+    }
+}
+// #e overlay
+
+// #s pagination
+
+// structure
+// div#book-pagination
+// 	span#page-count
+// 	span#page-number
+// 		a.number+span#current
+
+// pagination on screen min-width: 320px
+@media (max-width: 479px) {
+    div#book-pagination{
+        display: none;
+    }
+}
+
+@media (min-width: 480px) {
+    div#book-pagination-wrapper {
+        position: fixed;
+        width: 300px;
+        text-align: center;
+        height: 35px;
+        z-index: 100001; // put it on the controls overlay
+        bottom: 0;
+        left: 50%;
+        margin-left: -175px;
+        margin-right: auto;
+    }
+    div#book-pagination {
+        display: inline-block;
+        position: relative;
+        background: transparent;
+        opacity: .8;
+        height: 30px;
+        font-family: arial,sans-serif;
+        font-size: 12px;
+        color: #efefef;
+        text-shadow: 0 0 1px rgba(0,0,0,.4);
+
+        span#page-count {
+            display: inline-block;
+            margin-right: 5px;
+        }
+        a.page-number, a.current-page {
+            display: inline-block;
+            height: 20px;
+            // modify this when the book has more than 100 pages.
+            width: 21px;
+            margin-right: 2px;
+            margin-top: 4px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 2px;
+            background: -webkit-gradient(linear, 0 0, 0 100%, from(#CE4104), to(#B50000));
+            background: -webkit-linear-gradient(#CE4104, #B50000);
+            background: -moz-linear-gradient(#CE4104, #B50000);
+            background: -o-linear-gradient(#CE4104, #B50000);
+            background: linear-gradient(#CE4104, #B50000);
+            border: 1px solid #930000;
+            box-shadow: 0 1px 0 rgba(255,255,255,.09),1px 1px 0 rgba(255,255,255,.06),-1px -1px 0 rgba(0,0,0,.05),inset 1px 1px 0 rgba(255,255,255,.05);
+        }
+        a.page-number, a.current-page, a.page-number:visited, a.page-number:hover {
+            color: #efefef;
+            text-decoration: none;
+        }
+        a.page-number:hover {
+            color: #fff;
+            text-decoration: none;
+            background: -webkit-gradient(linear, 0 0, 0 100%, from(#E34704), to(#DB0000));
+            background: -webkit-linear-gradient(#E34704, #DB0000);
+            background: -moz-linear-gradient(#E34704, #DB0000);
+            background: -o-linear-gradient(#E34704, #DB0000);
+            background: linear-gradient(#E34704, #DB0000);
+        }
+        a.page-number:active {
+            background: #B50000;
+            box-shadow: 0 1px 0 rgba(255,255,255,.09),1px 1px 0 rgba(255,255,255,.06),inset 0 1px 2px rgba(0,0,0,.3);
+        }
+        a.current-page {
+            cursor: default;
+            color: #ddd;
+            background: #B50000;
+            box-shadow: 0 1px 0 rgba(255,255,255,.09),1px 1px 0 rgba(255,255,255,.06)
+        }
+        span.page-ellipsis {
+            display: inline-block;
+            margin-right: 3px;
+        }
+    }
+}
+@media (min-width: 768px) {
+    div#book-pagination-wrapper {
+        height: 60px;
+        width: 500px;
+        margin-left: -270px;
+    }
+    div#book-pagination {
+        height: 60px;
+        font-size: 14px;
+        span#page-count {
+            margin-right: 10px;
+        }
+        a.page-number, a.current-page {
+            height: 26px;
+            width: 28px;
+            margin-right: 4px;
+            margin-top: 17px;
+            line-height: 26px;
+            border-radius: 3px;
+        }
+    }
+}
+
+// #e pagination
+
+// #e div#book-outer & div.book-inner, version 2.0
+
+// a small icon for drop down menu
+div.book-nav {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 0 1px rgba(0,0,0,.3);
+    color: #333;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    z-index: 1003;
+    a {
+        color: #333;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}

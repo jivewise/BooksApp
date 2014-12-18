@@ -1,0 +1,233 @@
+@import "compass";
+
+html,
+body,
+input,
+textarea,
+section,
+option {
+    font-family: hevetica, arial, 'microsoft yahei', simhei, sans-serif;
+    font-size: 14px;
+    color: #444;
+}
+html,
+body {
+    background-color: #FAFAFA;
+    line-height: 24px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #5092BD;
+    text-decoration: none;
+    outline: none;
+}
+a:hover {
+    color: #417498;
+}
+a,
+span,
+button,
+div {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+div {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.hidden {
+    display: none;
+}
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    height: 50px;
+    line-height: 50px;
+    color: #FFF;
+    background: #333;
+    @include background-image(linear-gradient(#555555, #222222));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 51;
+    text-align: center;
+    font-size: 25px; // this helps to scale fontawsome icons
+    .page-title {
+        font-size: 20px;
+    }
+    .back-btn, .nav-btn {
+        display: block;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .nav-btn {
+        left: auto;
+        right: 0;
+    }
+    .nav-menu {
+        display: none;
+        max-width: 300px;
+        text-align: left;
+        padding: 0 20px;
+        line-height: 50px;
+        font-size: 20px;
+        color: #444;
+        background: white;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        box-shadow: -1px 1px 3px rgba(0,0,0,.2);
+        z-index: 999;
+        &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border: 10px solid white;
+            position: absolute;
+            right: 15px;
+            top: -8px;
+            border-top: none;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+        .menu-item {
+            display: block;
+            border-bottom: 1px solid #ddd;
+            padding: 0 20px;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+    }
+
+}
+
+#container {
+    padding: 50px 0 10px;
+    .feedback-iframe {
+        display: block;
+        width: 96%;
+        max-width: 96%;
+        margin: 10px auto;
+        background: transparent;
+    }
+}
+.menu-group-container {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    .menu-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 20px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        text-align: left;
+        i {
+            line-height: 40px;
+            color: #aaa;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: inherit;
+        }
+        &:last-child {
+            border: none;
+        }
+    }
+}
+
+// about page
+.about-page {
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 100px;
+    text-align: center;
+    color: #444;
+    font-size: 15px;
+    .app-name {
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .version {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #888;
+    }
+    .download-app-qr-code {
+        margin-top: 10px;
+        width: 240px;
+        height: auto;
+
+    }
+    .copyright {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+    }
+}
+
+// follow us page
+.follow-us-page {
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 100px;
+    text-align: center;
+    color: #444;
+    font-size: 15px;
+    .facebook-logo {
+        width: 20px;
+        height: auto;
+        margin-right: 10px;
+    }
+}
+
+// customized sharing plugin
+.sharing-container {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 10px 0;
+    background: white;
+    bottom: 0;
+    z-index: 3;
+    box-shadow: 0 -1px 5px rgba(0,0,0,.3);
+    table {
+        width: 100%;
+        text-align: center;
+        td {
+            padding: 5px;
+            img {
+                width: 85%;
+                height: auto;
+            }
+        }
+    }
+}

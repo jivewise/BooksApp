@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Book List</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/book-list.css" media="all">
+	<link rel="stylesheet" type="text/css" href="vendor-css/bookblock.css" media="all"/>
+	<script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+<div id="book-list-body">
+	<div class="featured-book bear">
+		<a class="featured-link" href="barry.html">
+			<div class="play-icon"></div>
+		</a>
+
+		<h1>Barry the Brown Bear</h1>
+
+		<p>
+			Follow Barry the Bear along on a journey for the perfect meal! You'll get to
+			meet his friends and find out why it's always good to play nice with others.
+		</p>
+		<a href="barry.html" class="action-button">Start Reading!</a>
+	</div>
+
+	<div class="featured-book holly">
+		<a class="featured-link" href="holly.html">
+			<div class="play-icon"></div>
+		</a>
+
+		<h1>Holly Turns into Dog</h1>
+
+		<p>
+			Holly's mother gives Holly a super special surprise.
+			Let's go and find out why the surprise is so special.
+		</p>
+		<a href="holly.html" class="action-button">Start Reading!</a>
+	</div>
+</div>
+
+<div class="book-nav"><a href="settings.html"><i class="fa fa-th-large"></i></a></div>
+</body>
+<script>
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+	function onDeviceReady() {
+		document.addEventListener("backbutton", onBackKeyDown, false);
+	}
+
+	function onBackKeyDown() {
+		if (confirm('Exit Whyyu Books?')) {
+			navigator.app.exitApp();
+		}
+	}
+</script>
+</html>

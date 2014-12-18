@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Feedback</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/settings.css" type="text/css"/>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+</head>
+<body>
+<div id="app" class="clear">
+	<div id="main">
+		<div class="header clear">
+			<span class="back-btn"><i class="fa fa-chevron-left"></i></span>
+			<span class="page-title">Feedback</span>
+			<span class="nav-btn"><i class="fa fa-bars"></i></span>
+
+			<div class="nav-menu">
+				<span class="menu-item back-to-book-list-btn"><i class="fa fa-home"></i> Book list</span>
+				<span class="menu-item to-setting-page-btn"><i class="fa fa-gear"></i> Settings</span>
+				<span class="menu-item exit-btn"><i class="fa fa-power-off"></i> Exit</span>
+			</div>
+		</div>
+		<div id="container">
+			<iframe src="http://staging.whyyu.com/apps/whyyubooks/feedback" frameborder="0"
+					class="feedback-iframe"></iframe>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		// back to book list page
+		$('.header').on('touchend', '.back-to-book-list-page-btn', function () {
+			location.replace('index.html');
+
+		// back to settings page
+		}).on('touchend', '.back-btn, .to-setting-page-btn', function () {
+			location.replace('settings.html');
+
+		// drop down nav button
+		}).on('touchend', '.nav-btn', function (e) {
+			e.stopPropagation();
+			$(this).parent().find('.nav-menu').toggle();
+
+		// exit app button
+		}).on('touchend', '.exit-btn', function () {
+			navigator.app.exitApp();
+		});
+
+		// hide nav menu when start to touch other part
+		$(document).on('touchend', function () {
+			$('.nav-menu').hide(0);
+		});
+	});
+
+	document.addEventListener('deviceready', onDeviceReady, false);
+
+	// handle device events
+	function onBackKeyDown() {
+		location.replace('settings.html');
+	}
+	function onDeviceReady() {
+		document.addEventListener("backbutton", onBackKeyDown, false);
+	}
+</script>
+</body>
+</html>

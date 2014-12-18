@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Holly turns into Dog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/book.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/holly_textblock.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="vendor-css/bookblock.css" media="all"/>
+	<script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+<div id="book-outer">
+	<div class="book-inner">
+		<div id="pages" class="bb-bookblock"></div>
+	</div>
+</div>
+<div id="book-controls" class="overlay">
+	<a id="play-book" class="paused iconic"></a>
+	<a class='next-page iconic'></a>
+	<a class='prev-page iconic'></a>
+</div>
+<div id="book-pagination-wrapper">
+	<div id="book-pagination"></div>
+</div>
+
+<div class="book-nav"><a href="settings.html"><i class="fa fa-th-large"></i></a></div>
+
+<script type="text/template" id="page-template">
+	<div class="page bb-item">
+		<img class="page-background" src="{{=image}}"/>
+		<div class="left-grad"></div>
+		<div class="right-grad"></div>
+		<div class="text-block">
+			{{= text }}
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="last-page-template">
+	<div class="page bb-item">
+		<div class="last-page">
+			<div class="left-grad">
+				<div class="rating-stars"><i class="fa fa-star"> </i> <i class="fa fa-star"></i> <i
+						class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+				<div class="rate-this-app">Rate this APP</div>
+			</div>
+			<div class="right-grad">
+				<p class="the-end">The End</p>
+				<a href="javascript:void(0)" class="read-again" id="read-again">Read It Again!</a>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquerypp.custom.js"></script>
+<script type="text/javascript" src="lib/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="lib/jquery.bookblock.js"></script>
+<script type="text/javascript" src="lib/underscore-min.js"></script>
+<script type="text/javascript" src="lib/backbone-min.js"></script>
+<script type="text/javascript" src="lib/sound/soundmanager2-nodebug-jsmin.js"></script>
+<script type="text/javascript" src="js/holly_pages.js"></script>
+<script type="text/javascript" src="js/book.js"></script>
+<script type="text/javascript" src="js/retina.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

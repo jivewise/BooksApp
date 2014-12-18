@@ -1,0 +1,445 @@
+div.text-block {
+	/* hide the text when turn pages or it will relocate itself */
+	display: none;
+	-webkit-font-smoothing: antialiased;
+}
+div.page0 .text-block, 
+div.page1 .text-block, 
+div.page2 .text-block, 
+div.page3 .text-block, 
+div.page4 .text-block, 
+div.page5 .text-block, 
+div.page6 .text-block, 
+div.page7 .text-block, 
+div.page8 .text-block, 
+div.page9 .text-block, 
+div.page10 .text-block, 
+div.page11 .text-block, 
+div.page12 .text-block, 
+div.page13 .text-block, 
+div.page14 .text-block, 
+div.page15 .text-block,
+div.page16 .text-block, 
+div.page17 .text-block, 
+div.page18 .text-block, 
+div.page19 .text-block, 
+div.page20 .text-block, 
+div.page21 .text-block, 
+div.page22 .text-block, 
+div.page23 .text-block,
+div.page24 .text-block  {
+	/* display the text when the 'turn-page' action is over */
+	display: block;
+}
+
+@media (min-width: 1024px) {
+	/* override some of the original layout */
+	div.text-block {
+		padding: 20px;
+		color: #333;
+		border-radius: 10px;
+		text-shadow: 0 0 1px rgba(0,0,0,.5);
+		-webkit-font-smoothing:antialiased;
+	}
+	
+	/* place the text-block for each page */
+	div.page0 .text-block {
+		width: 350px;
+		margin: 50px 470px;
+	}
+	div.page1 .text-block {
+		width: 350px;
+		margin: 220px 470px;
+	}
+	div.page2 .text-block {
+		width: 350px;
+		margin: 60px 470px;
+	}
+	div.page3 .text-block {
+		margin: 60px 20px;
+	}
+	div.page4 .text-block {
+		width: 680px;
+		margin: 40px 120px;
+	}
+	div.page5 .text-block {
+		width: 260px;
+		margin: 300px 10px;
+	}
+	div.page6 .text-block {
+		width: 300px;
+		margin: 290px 40px;
+	}
+	div.page7 .text-block {
+		width: 300px;
+		margin: 40px 520px;
+	}
+	div.page8 .text-block {
+		width: 350px;
+		margin: 280px 470px;
+	}
+	div.page9 .text-block {
+		width: 350px;
+		margin: 20px 470px;
+	}
+	div.page10 .text-block {
+		width: 450px;
+		margin: 40px 180px;
+	}
+	div.page11 .text-block {
+		width: 350px;
+		margin: 40px 470px;
+	}
+	div.page12 .text-block {
+		width: 280px;
+		margin: 300px 30px;
+	}
+	div.page13 .text-block {
+		margin: 40px 60px;
+	}
+	div.page14 .text-block {
+		margin: 20px 210px;
+	}
+	div.page15 .text-block {
+		width: 350px;
+		margin: 40px 470px;
+	}
+	div.page16 .text-block {
+		width: 340px;
+		margin: 300px 30px;
+	}
+	div.page17 .text-block {
+		width: 340px;
+		margin: 20px 480px;
+	}
+	div.page18 .text-block {
+		width: 360px;
+		margin: 20px 20px;
+	}
+	div.page19 .text-block {
+		width: 240px;
+		margin: 20px 20px;
+	}
+	div.page20 .text-block {
+		width: 220px;
+		margin: 20px 10px;
+	}
+	div.page21 .text-block {
+		width: 380px;
+		margin: 20px 15px;
+	}
+	div.page22 .text-block {
+		width: 530px;
+		margin: 20px 280px;
+	}
+	div.page23 .text-block {
+		width: 340px;
+		margin: 280px 30px;
+	}
+	div.page24 .text-block {
+		width: 360px;
+		margin: 20px 20px;
+	}
+}
+
+@media (min-width: 768px) and (max-width:1023px) {
+	/* override some of the original layout */
+	div.text-block {
+		padding: 12px;
+		color: #444;
+		border-radius: 7px;
+		text-shadow: 0 0 1px rgba(0,0,0,.2);
+		width: 255px;
+		margin: 50px 400px;
+
+		p {
+			font-size: 14px;
+		}
+	}
+	/* place the text-block for each page */
+	div.page0 .text-block {
+		width: 300px;
+		margin: 10px 367px;
+	}
+	div.page1 .text-block {
+		width: 300px;
+		margin: 160px 367px;
+	}
+	div.page2 .text-block {
+		width: 290px;
+		margin: 13px 367px;
+	}
+	div.page3 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page4 .text-block {
+		width: 280px;
+		margin: 10px 367px;
+	}
+	div.page5 .text-block {
+		width: 200px;
+		margin: 228px 5px;
+	}
+	div.page6 .text-block {
+		width: 280px;
+		margin: 228px 10px;
+	}
+	div.page7 .text-block {
+		width: 250px;
+		margin: 20px 385px;
+	}
+	div.page8 .text-block {
+		width: 280px;
+		margin: 200px 367px;
+	}
+	div.page9 .text-block {
+		width: 290px;
+		margin: 10px 367px;
+	}
+	div.page10 .text-block {
+		width: 320px;
+		margin: 30px 150px;
+	}
+	div.page11 .text-block {
+		width: 280px;
+		margin: 20px 367px;
+	}
+	div.page12 .text-block {
+		width: 280px;
+		margin: 230px 10px;
+	}
+	div.page13 .text-block {
+		width: 280px;
+		margin: 260px 367px;
+	}
+	div.page14 .text-block {
+		width: 400px;
+		margin: 20px 130px;
+	}
+	div.page15 .text-block {
+		width: 280px;
+		margin: 20px 367px;
+	}
+	div.page16 .text-block {
+		width: 280px;
+		margin: 235px 12px;
+	}
+	div.page17 .text-block {
+		width: 280px;
+		margin: 20px 367px;
+	}
+	div.page18 .text-block {
+		width: 280px;
+		margin: 20px 16px;
+	}
+	div.page19 .text-block {
+		width: 190px;
+		margin: 10px 10px;
+	}
+	div.page20 .text-block {
+		width: 280px;
+		margin: 351px 392px;
+	}
+	div.page21 .text-block {
+		width: 280px;
+		margin: 10px 10px;
+	}
+	div.page22 .text-block {
+		width: 380px;
+		margin: 20px 243px;
+	}
+	div.page23 .text-block {
+		width: 280px;
+		margin: 215px 15px;
+	}
+	div.page24 .text-block {
+		width: 290px;
+		margin: 10px 10px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	div.text-block {
+		width: 180px;
+		top: 2px;
+		left: 2px;
+		border-radius: 5px;
+		padding: 5px; 
+		box-sizing: border-box;
+		
+		p {
+			font-size:14px;
+		}
+	}
+	div.page0 .text-block {
+		width: 200px;
+		margin: 5px 220px;
+	}
+	div.page1 .text-block {
+		width: 200px;
+		margin: 90px 220px;
+	}
+	div.page2 .text-block {
+		width: 300px;
+		margin: 1px 76px;
+	}
+	div.page3 .text-block {
+		width: 300px;
+		margin: 5px 5px;
+	}
+	div.page4 .text-block {
+		width: 307px;
+		margin: 2px 2px;
+	}
+	div.page5 .text-block {
+		width: 375px;
+		margin: 174px 2px;
+	}
+	div.page6 .text-block {
+		width: 180px;
+		margin: 115px 2px;
+	}
+	div.page7 .text-block {
+		width: 160px;
+		margin: 5px 260px;
+	}
+	div.page8 .text-block {
+		width: 222px;
+		margin: 128px 182px;
+	}
+	div.page9 .text-block {
+		width: 173px;
+		margin: 5px 224px;
+	}
+	div.page10 .text-block {
+		width: 377px;
+		margin: 2px 2px;
+	}
+	div.page11 .text-block {
+		width: 180px;
+		margin: 2px 226px;
+	}
+	div.page12 .text-block {
+		width: 183px;
+		margin: 168px 2px;
+	}
+	div.page13 .text-block {
+		width: 200px;
+		margin: 2px 220px;
+	}
+	div.page14 .text-block {
+		width: 378px;
+		margin: 5px 19px;
+	}
+	div.page15 .text-block {
+		width: 163px;
+		margin: 151px 259px;
+	}
+	div.page16 .text-block {
+		width: 200px;
+		margin: 140px 2px;
+	}
+	div.page17 .text-block {
+		width: 160px;
+		margin: 3px 262px;
+	}
+	div.page18 .text-block {
+		width: 200px;
+		margin: 193px 220px;
+	}
+	div.page19 .text-block {
+		width: 180px;
+		margin: 128px 243px;
+	}
+	div.page20 .text-block {
+		width: 200px;
+		margin: 130px 224px;
+	}
+	div.page21 .text-block {
+		width: 129px;
+		margin: 2px 2px;
+	}
+	div.page22 .text-block {
+		/* the block is too big not to split up */
+		width: 100%;
+		background: transparent;
+		
+		/* split the three paragraph into two block */
+		p {
+			position: relative;
+			background: rgba(255,255,255,.9);
+		}
+
+		/* glue the first paragrah and the second one */
+		p:nth-child(1) {
+			width: 264px;
+			margin: 6px 132px;
+			padding: 5px 5px 0;
+			margin-bottom: 0;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+		p:nth-child(2) {
+			width: 264px;
+			margin: 0 0 0 132px;
+			padding: 0 5px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			padding-top: 6px;
+			padding-bottom: 8px;
+		}
+		p:nth-child(3) {
+			width: 238px;
+			margin: 189px 146px;
+			padding: 5px 5px 8px 5px;
+			border-radius: 5px;
+		}
+	}
+	div.page23 .text-block {
+		width: 182px;
+		margin: 145px 10px;
+	}
+	div.page24 .text-block {
+		width: 197px;
+		margin: 2px 2px;
+	}
+}
+@media (min-width: 320px) and (max-width: 479px) {
+	/* in case the "controls" covers the texts */
+	@media (orientation: portrait) {
+		body {
+			padding-bottom: 50px;
+		}
+	}
+	.text-block {
+		width: 300px; //the same width as #book-outer
+		top: -5px;
+		left: -10px; // align with book outer
+		border-radius:2px;
+		box-sizing: border-box;
+		padding: 10px !important; 
+		
+		p {
+			font-size:14px;
+		}
+	}
+}
+@media (max-width: 319px) {
+	/* in case the "controls" covers the texts */
+	body {
+		min-height: 240px;
+		padding: 3px;
+	}
+	.text-block {
+		font-size: 14px !important;
+		border-radius: 3px;
+		box-sizing: border-box;
+		padding: 10px !important;
+
+		p {
+			line-height: 1.8em !important;
+		}
+	}
+}
+

@@ -1,0 +1,403 @@
+div.text-block {
+	/* hide the text when turn pages or it will relocate itself */
+	display: none;
+	-webkit-font-smoothing: antialiased;
+}
+div.page0 .text-block, 
+div.page1 .text-block, 
+div.page2 .text-block, 
+div.page3 .text-block, 
+div.page4 .text-block, 
+div.page5 .text-block, 
+div.page6 .text-block, 
+div.page7 .text-block, 
+div.page8 .text-block, 
+div.page9 .text-block, 
+div.page10 .text-block, 
+div.page11 .text-block, 
+div.page12 .text-block, 
+div.page13 .text-block, 
+div.page14 .text-block, 
+div.page15 .text-block,
+div.page16 .text-block, 
+div.page17 .text-block, 
+div.page18 .text-block, 
+div.page19 .text-block, 
+div.page20 .text-block, 
+div.page21 .text-block, 
+div.page22 .text-block, 
+div.page23 .text-block,
+div.page24 .text-block  {
+	/* display the text when the 'turn-page' action is over */
+	display: block;
+}
+
+@media (min-width: 1024px) {
+	/* override some of the original layout */
+	div.text-block {
+		padding: 20px;
+		color: #333;
+		border-radius: 10px;
+		text-shadow: 0 0 1px rgba(0,0,0,.5);
+		-webkit-font-smoothing:antialiased;
+	}
+	
+	/* place the text-block for each page */
+	div.page0 .text-block {
+		width: 350px;
+		margin: 50px 470px;
+	}
+	div.page1 .text-block {
+		width: 350px;
+		margin: 20px 20px;
+	}
+	div.page2 .text-block {
+		width: 350px;
+		margin: 60px 470px;
+	}
+	div.page3 .text-block {
+		width: 280px;
+		margin: 60px 120px;
+	}
+	div.page4 .text-block {
+		margin: 10px 70px;
+	}
+	div.page5 .text-block {
+		width: 320px;
+		margin: 10px 10px;
+	}
+	div.page6 .text-block {
+		width: 320px;
+		margin: 10px 10px;
+	}
+	div.page7 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page8 .text-block {
+		width: 280px;
+		margin: 10px 570px;
+	}
+	div.page9 .text-block {
+		width: 350px;
+		margin: 20px 20px;
+	}
+	div.page10 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page11 .text-block {
+		width: 300px;
+		margin: 10px 520px;
+	}
+	div.page12 .text-block {
+		width: 280px;
+		margin: 30px 30px;
+	}
+	div.page13 .text-block {
+		width: 280px;
+		margin: 40px 60px;
+	}
+	div.page14 .text-block {
+		width: 390px;
+		margin: 10px 10px;
+	}
+	div.page15 .text-block {
+		width: 390px;
+		margin: 10px 10px;
+	}
+	div.page16 .text-block {
+		width: 350px;
+		margin: 30px 480px;
+	}
+	div.page17 .text-block {
+		width: 340px;
+		margin: 20px 480px;
+	}
+	div.page18 .text-block {
+		width: 310px;
+		margin: 10px 10px;
+	}
+	div.page19 .text-block {
+		width: 260px;
+		margin: 10px 10px;
+	}
+	div.page20 .text-block {
+		width: 280px;
+		margin: 10px 10px;
+	}
+	div.page21 .text-block {
+		width: 290px;
+		margin: 10px 560px;
+	}
+	div.page22 .text-block {
+		width: 280px;
+		margin: 20px 560px;
+	}
+	div.page23 .text-block {
+		width: 360px;
+		margin: 100px 20px;
+	}
+}
+
+@media (min-width: 768px) and (max-width:1023px) {
+	/* override some of the original layout */
+	div.text-block {
+		padding: 12px;
+		color: #444;
+		border-radius: 7px;
+		text-shadow: 0 0 1px rgba(0,0,0,.2);
+		width: 255px;
+		margin: 50px 400px;
+
+		p {
+			font-size: 14px;
+		}
+	}
+	/* place the text-block for each page */
+	div.page0 .text-block {
+		width: 280px;
+		margin: 50px 380px;
+	}
+	div.page1 .text-block {
+		width: 280px;
+		margin: 10px 10px;
+	}
+	div.page2 .text-block {
+		width: 280px;
+		margin: 50px 380px;
+	}
+	div.page3 .text-block {
+		width: 250px;
+		margin: 60px 60px;
+	}
+	div.page4 .text-block {
+		width: 220px;
+		margin: 10px 10px;
+	}
+	div.page5 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page6 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page7 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page8 .text-block {
+		width: 220px;
+		margin: 10px 455px;
+	}
+	div.page9 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page10 .text-block {
+		width: 245px;
+		margin: 100px 10px;
+	}
+	div.page11 .text-block {
+		width: 240px;
+		margin: 30px 423px;
+	}
+	div.page12 .text-block {
+		width: 280px;
+		margin: 30px 30px;
+	}
+	div.page13 .text-block {
+		width: 280px;
+		margin: 40px 30px;
+	}
+	div.page14 .text-block {
+		width: 377px;
+		margin: 10px 10px;
+	}
+	div.page15 .text-block {
+		width: 300px;
+		margin: 10px 10px;
+	}
+	div.page16 .text-block {
+		width: 300px;
+		margin: 100px 370px;
+	}
+	div.page17 .text-block {
+		width: 300px;
+		margin: 40px 20px;
+	}
+	div.page18 .text-block {
+		width: 250px;
+		margin: 10px 10px;
+	}
+	div.page19 .text-block {
+		width: 260px;
+		margin: 10px 10px;
+	}
+	div.page20 .text-block {
+		width: 300px;
+		margin: 10px 370px;
+	}
+	div.page21 .text-block {
+		width: 213px;
+		margin: 160px 10px;
+	}
+	div.page22 .text-block {
+		width: 260px;
+		margin: 20px 400px;
+	}
+	div.page23 .text-block {
+		width: 280px;
+		margin: 150px 20px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	div.text-block {
+		width: 180px;
+		top: 2px;
+		left: 2px;
+		border-radius: 5px;
+		padding: 5px; 
+		box-sizing: border-box;
+		
+		p {
+			font-size:14px;
+		}
+	}
+	div.page0 .text-block {
+		width: 200px;
+		margin: 5px 220px;
+	}
+	div.page1 .text-block {
+		width: 150px;
+		margin: 5px 5px;
+	}
+	div.page2 .text-block {
+		width: 200px;
+		margin: 5px 220px;
+	}
+	div.page3 .text-block {
+		width: 200px;
+		margin: 5px 5px;
+	}
+	div.page4 .text-block {
+		width: 127px;
+		margin: 5px 5px;
+	}
+	div.page5 .text-block {
+		width: 150px;
+		margin: 5px 270px;
+	}
+	div.page6 .text-block {
+		width: 150px;
+		margin: 5px 5px;
+	}
+	div.page7 .text-block {
+		width: 200px;
+		margin: 48px 5px;
+	}
+	div.page8 .text-block {
+		width: 150px;
+		margin: 5px 270px;
+	}
+	div.page9 .text-block {
+		width: 421px;
+		margin: 3px 2px;
+	}
+	div.page10 .text-block {
+		width: 160px;
+		margin: 5px 5px;
+	}
+	div.page11 .text-block {
+		width: 130px;
+		margin: 5px 290px;
+	}
+	div.page12 .text-block {
+		width: 240px;
+		margin: 5px 5px;
+	}
+	div.page13 .text-block {
+		width: 200px;
+		margin: 5px 5px;
+	}
+	div.page14 .text-block {
+		width: 420px;
+		margin: 3px 3px;
+	}
+	div.page15 .text-block {
+		width: 200px;
+		margin: 5px 5px;
+	}
+	div.page16 .text-block {
+		width: 200px;
+		margin: 40px 220px;
+	}
+	div.page17 .text-block {
+		width: 200px;
+		margin: 5px 5px;
+	}
+	div.page18 .text-block {
+		width: 153px;
+		margin: 5px 5px;
+	}
+	div.page19 .text-block {
+		width: 415px;
+		margin: 5px 5px;
+	}
+	div.page20 .text-block {
+		width: 150px;
+		margin: 5px 5px;
+	}
+	div.page21 .text-block {
+		width: 160px;
+		margin: 5px 5px;
+	}
+	div.page22 .text-block {
+		width: 160px;
+		margin: 5px 260px;
+	}
+	div.page23 .text-block {
+		width: 200px;
+		margin: 5px 5px;
+	}
+}
+@media (min-width: 320px) and (max-width: 479px) {
+	/* in case the "controls" covers the texts */
+	@media (orientation: portrait) {
+		body {
+			padding-bottom: 50px;
+		}
+	}
+	.text-block {
+		width: 300px; //the same width as #book-outer
+		top: -5px;
+		left: -10px; // align with book outer
+		border-radius:2px;
+		box-sizing: border-box;
+		padding: 10px !important; 
+		
+		p {
+			font-size:14px;
+		}
+	}
+}
+@media (max-width: 319px) {
+	/* in case the "controls" covers the texts */
+	body {
+		min-height: 240px;
+		padding: 3px;
+	}
+	.text-block {
+		font-size: 14px !important;
+		border-radius: 3px;
+		box-sizing: border-box;
+		padding: 10px !important;
+
+		p {
+			line-height: 1.8em !important;
+		}
+	}
+}
+

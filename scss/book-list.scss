@@ -1,0 +1,263 @@
+
+@import "mixins";
+@import "compass/css3";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background:img-url('wood.jpg') 50% 0 repeat-y fixed;
+}
+
+div#book-list-body {
+	width: 320px;
+	font-family:"Josefin Sans", sans-serif;
+	font-size: 16px;
+	color: #444;
+	position: relative;
+	margin: 0 auto;
+}
+div.featured-book {
+	position: relative;
+	width: 300px;
+	margin: 80px auto;
+	clear: both;
+}
+div.featured-book:nth-child(1) {
+	margin-bottom: 100px;
+}
+div.featured-book:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+a.featured-link:hover {
+	border-color: #0291d7;
+}
+a.featured-link {
+	@include box-shadow(1px 1px 5px #444);
+
+	position: relative;
+	display:block;
+	width:260px;
+	height:340px;
+	box-sizing: border-box;
+	border:10px solid #fff;
+
+	div.play-icon {
+		@include text-shadow(1px 1px 5px #444);
+
+		position: relative;
+		width:100%;
+		height:100%;
+		font-size:50px;
+		font-family: 'IconicFill'; 
+		display:inline-block; 
+		text-align:center;
+		line-height:320px;
+		color:#0291d7;
+	}
+	div.play-icon:before {
+		content:'\e047';
+	}
+}
+h1 {
+	position: relative;
+	font-family: "Dancing Script", serif;
+	color: white;
+	font-size: 32px;
+	text-shadow: 2px 2px 5px #232323;
+	text-align: center;
+	width: 260px;
+	margin-top: 30px;
+}
+p {
+	position: relative;
+	background: rgba(255, 255, 255, 0.7);
+	box-sizing: border-box;
+	padding: 20px;
+	line-height: 145%;
+	border-radius: 10px;
+	width: 260px;
+	margin-top: 30px;
+}
+a.action-button {
+	@include action-button;
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 30px;
+	width: 260px;
+	margin-top: 30px;
+}
+
+@media (min-width: 480px) {
+	div#book-list-body {
+		width: 480px;
+	}
+	div.featured-book {
+		position: relative;
+		width: 460px;
+		margin: 160px auto;
+	}
+	div.featured-book:nth-child(1) {
+	margin-bottom: 180px;
+	}
+	a.featured-link {
+		float: left;
+	}
+	h1 {
+		margin-top: 0;
+		width: 180px;
+		float: left;
+		margin-left: 10px;
+	}
+	p {
+		margin-top: 10px;
+		float: left;
+		width: 180px;
+		padding: 10px;
+		margin-left: 20px;
+	}
+	a.action-button {
+		margin-top: 20px;
+		float: left;
+		width: 180px;
+		font-size: 18px;
+		margin-left: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+    div.featured-book {
+        >a,>h1,>p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+	div#book-list-body {
+		width: 768px;
+	}
+	div.featured-book {
+		position: relative;
+		width: 740px;
+		margin: 100px auto;	
+	}
+	div.featured-book:nth-child(1) {
+	margin-bottom: 120px;
+	}
+	a.featured-link {
+		width: 300px;
+		height: 400px;
+		box-sizing: content-box;
+
+		div.play-icon {
+
+			font-size: 100px;
+			line-height: 400px;
+		}
+		div.play-icon:before {
+			content:'\e047';
+		}
+	}
+	h1 {
+		font-size: 50px;
+		margin-top: 0;
+		width: 350px;
+		margin-left: 20px;
+	}
+	p {
+		margin-top: 40px;
+		width: 350px;
+		padding: 20px;
+		margin-left: 20px;
+	}
+	a.action-button {
+		margin-top: 40px;
+		width: 350px;
+		font-size: 24px;
+		margin-left: 20px;
+	}
+	
+}
+
+@media (min-width: 1024px) {
+	div#book-list-body {
+		width: 1024px;
+	}
+	div.featured-book {
+		position: relative;
+		width: 1000px;
+
+		h1 {
+			font-size: 60px;
+			margin-top: 0;
+			width: 400px;
+			margin-left: 80px;
+		}
+		p {
+			font-size: 18px;
+			margin-top: 50px;
+			width: 400px;
+			padding: 20px;
+			margin-left: 80px;
+		}
+		a.action-button {
+			margin-top: 40px;
+			width: 300px;
+			font-size: 30px;
+			margin-left: 120px;
+		}
+	}
+}
+
+
+
+
+// add a new book cover when adding a new book
+// barry the brown bear
+.bear a.featured-link {
+	background:img-url('bear-cover.jpg');
+	background-size:contain;
+	
+	/* add a higher resolution bear as book cover */
+	@media (-webkit-min-device-pixel-ratio : 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)  {
+		background: img-url('bear-cover@2x.jpg');
+		background-size: contain;
+	}
+}
+
+// holly turns into dog
+.holly a.featured-link {
+	background:img-url('holly-cover.png');
+	background-size:contain;
+	
+	/* add a higher resolution bear as book cover */
+	@media (-webkit-min-device-pixel-ratio : 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)  {
+		background: img-url('holly-cover@2x.png');
+		background-size: contain;
+	}
+}
+
+// a small icon for drop down menu
+div.book-nav {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.8);
+    color: #333;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    z-index: 1003;
+}
+

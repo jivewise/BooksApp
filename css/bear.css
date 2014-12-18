@@ -1,0 +1,602 @@
+/* line 1, ../scss/bear.scss */
+div.text-block {
+  /* hide the text when turn pages or it will relocate itself */
+  display: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 30, ../scss/bear.scss */
+div.page0 .text-block,
+div.page1 .text-block,
+div.page2 .text-block,
+div.page3 .text-block,
+div.page4 .text-block,
+div.page5 .text-block,
+div.page6 .text-block,
+div.page7 .text-block,
+div.page8 .text-block,
+div.page9 .text-block,
+div.page10 .text-block,
+div.page11 .text-block,
+div.page12 .text-block,
+div.page13 .text-block,
+div.page14 .text-block,
+div.page15 .text-block,
+div.page16 .text-block,
+div.page17 .text-block,
+div.page18 .text-block,
+div.page19 .text-block,
+div.page20 .text-block,
+div.page21 .text-block,
+div.page22 .text-block,
+div.page23 .text-block,
+div.page24 .text-block {
+  /* display the text when the 'turn-page' action is over */
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  /* override some of the original layout */
+  /* line 37, ../scss/bear.scss */
+  div.text-block {
+    padding: 20px;
+    color: #333;
+    border-radius: 10px;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* place the text-block for each page */
+  /* line 46, ../scss/bear.scss */
+  div.page0 .text-block {
+    width: 350px;
+    margin: 50px 0 0 470px;
+  }
+
+  /* line 50, ../scss/bear.scss */
+  div.page1 .text-block {
+    width: 350px;
+    margin: 220px 0 0 470px;
+  }
+
+  /* line 54, ../scss/bear.scss */
+  div.page2 .text-block {
+    width: 350px;
+    margin: 60px 0 0 470px;
+  }
+
+  /* line 58, ../scss/bear.scss */
+  div.page3 .text-block {
+    margin: 60px 0 0 20px;
+  }
+
+  /* line 61, ../scss/bear.scss */
+  div.page4 .text-block {
+    margin: 40px 0 0 120px;
+  }
+
+  /* line 64, ../scss/bear.scss */
+  div.page5 .text-block {
+    width: 310px;
+    margin: 300px 0 0 10px;
+  }
+
+  /* line 68, ../scss/bear.scss */
+  div.page6 .text-block {
+    width: 300px;
+    margin: 290px 0 0 40px;
+  }
+
+  /* line 72, ../scss/bear.scss */
+  div.page7 .text-block {
+    width: 300px;
+    margin: 40px 0 0 520px;
+  }
+
+  /* line 76, ../scss/bear.scss */
+  div.page8 .text-block {
+    width: 350px;
+    margin: 280px 0 0 470px;
+  }
+
+  /* line 80, ../scss/bear.scss */
+  div.page9 .text-block {
+    width: 350px;
+    margin: 20px 0 0 470px;
+  }
+
+  /* line 84, ../scss/bear.scss */
+  div.page10 .text-block {
+    width: 450px;
+    margin: 40px 0 0 180px;
+  }
+
+  /* line 88, ../scss/bear.scss */
+  div.page11 .text-block {
+    width: 350px;
+    margin: 40px 0 0 470px;
+  }
+
+  /* line 92, ../scss/bear.scss */
+  div.page12 .text-block {
+    width: 280px;
+    margin: 300px 0 0 30px;
+  }
+
+  /* line 96, ../scss/bear.scss */
+  div.page13 .text-block {
+    margin: 40px 0 0 60px;
+  }
+
+  /* line 99, ../scss/bear.scss */
+  div.page14 .text-block {
+    margin: 20px 0 0 210px;
+  }
+
+  /* line 102, ../scss/bear.scss */
+  div.page15 .text-block {
+    width: 350px;
+    margin: 40px 0 0 470px;
+  }
+
+  /* line 106, ../scss/bear.scss */
+  div.page16 .text-block {
+    width: 340px;
+    margin: 300px 0 0 30px;
+  }
+
+  /* line 110, ../scss/bear.scss */
+  div.page17 .text-block {
+    width: 340px;
+    margin: 20px 0 0 480px;
+  }
+
+  /* line 114, ../scss/bear.scss */
+  div.page18 .text-block {
+    width: 360px;
+    margin: 20px 0 0 20px;
+  }
+
+  /* line 118, ../scss/bear.scss */
+  div.page19 .text-block {
+    width: 240px;
+    margin: 20px 0 0 20px;
+  }
+
+  /* line 122, ../scss/bear.scss */
+  div.page20 .text-block {
+    width: 220px;
+    margin: 20px 0 0 10px;
+  }
+
+  /* line 126, ../scss/bear.scss */
+  div.page21 .text-block {
+    width: 380px;
+    margin: 20px 0 0 15px;
+  }
+
+  /* line 130, ../scss/bear.scss */
+  div.page22 .text-block {
+    width: 530px;
+    margin: 20px 0 0 280px;
+  }
+
+  /* line 134, ../scss/bear.scss */
+  div.page23 .text-block {
+    width: 340px;
+    margin: 280px 0 0 30px;
+  }
+
+  /* line 138, ../scss/bear.scss */
+  div.page24 .text-block {
+    width: 360px;
+    margin: 20px 0 0 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* override some of the original layout */
+  /* line 146, ../scss/bear.scss */
+  div.text-block {
+    padding: 12px;
+    color: #444;
+    border-radius: 7px;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    width: 255px;
+    margin: 50px 0 0 400px;
+  }
+  /* line 154, ../scss/bear.scss */
+  div.text-block p {
+    font-size: 14px;
+  }
+
+  /* place the text-block for each page */
+  /* line 159, ../scss/bear.scss */
+  div.page0 .text-block {
+    width: 300px;
+    margin: 10px 0 0 340px;
+  }
+
+  /* line 163, ../scss/bear.scss */
+  div.page1 .text-block {
+    width: 300px;
+    margin: 160px 0 0 340px;
+  }
+
+  /* line 167, ../scss/bear.scss */
+  div.page2 .text-block {
+    width: 290px;
+    margin: 13px 0 0 344px;
+  }
+
+  /* line 171, ../scss/bear.scss */
+  div.page3 .text-block {
+    width: 300px;
+    margin: 10px 0 0 10px;
+  }
+
+  /* line 175, ../scss/bear.scss */
+  div.page4 .text-block {
+    width: 280px;
+    margin: 10px 0 0 350px;
+  }
+
+  /* line 179, ../scss/bear.scss */
+  div.page5 .text-block {
+    width: 200px;
+    margin: 228px 0 0 5px;
+  }
+
+  /* line 183, ../scss/bear.scss */
+  div.page6 .text-block {
+    width: 280px;
+    margin: 228px 0 0 10px;
+  }
+
+  /* line 187, ../scss/bear.scss */
+  div.page7 .text-block {
+    width: 250px;
+    margin: 20px 0 0 380px;
+  }
+
+  /* line 191, ../scss/bear.scss */
+  div.page8 .text-block {
+    width: 280px;
+    margin: 200px 0 0 350px;
+  }
+
+  /* line 195, ../scss/bear.scss */
+  div.page9 .text-block {
+    width: 290px;
+    margin: 10px 0 0 350px;
+  }
+
+  /* line 199, ../scss/bear.scss */
+  div.page10 .text-block {
+    width: 320px;
+    margin: 30px 0 0 150px;
+  }
+
+  /* line 203, ../scss/bear.scss */
+  div.page11 .text-block {
+    width: 280px;
+    margin: 20px 0 0 350px;
+  }
+
+  /* line 207, ../scss/bear.scss */
+  div.page12 .text-block {
+    width: 280px;
+    margin: 230px 0 0 10px;
+  }
+
+  /* line 211, ../scss/bear.scss */
+  div.page13 .text-block {
+    width: 280px;
+    margin: 260px 0 0 350px;
+  }
+
+  /* line 215, ../scss/bear.scss */
+  div.page14 .text-block {
+    width: 400px;
+    margin: 20px 0 0 130px;
+  }
+
+  /* line 219, ../scss/bear.scss */
+  div.page15 .text-block {
+    width: 280px;
+    margin: 20px 0 0 355px;
+  }
+
+  /* line 223, ../scss/bear.scss */
+  div.page16 .text-block {
+    width: 280px;
+    margin: 235px 0 0 12px;
+  }
+
+  /* line 227, ../scss/bear.scss */
+  div.page17 .text-block {
+    width: 280px;
+    margin: 20px 0 0 350px;
+  }
+
+  /* line 231, ../scss/bear.scss */
+  div.page18 .text-block {
+    width: 280px;
+    margin: 20px 0 0 16px;
+  }
+
+  /* line 235, ../scss/bear.scss */
+  div.page19 .text-block {
+    width: 190px;
+    margin: 10px 0 0 10px;
+  }
+
+  /* line 239, ../scss/bear.scss */
+  div.page20 .text-block {
+    width: 280px;
+    margin: 230px 0 0 350px;
+  }
+
+  /* line 243, ../scss/bear.scss */
+  div.page21 .text-block {
+    width: 280px;
+    margin: 10px 0 0 10px;
+  }
+
+  /* line 247, ../scss/bear.scss */
+  div.page22 .text-block {
+    width: 380px;
+    margin: 20px 0 0 243px;
+  }
+
+  /* line 251, ../scss/bear.scss */
+  div.page23 .text-block {
+    width: 280px;
+    margin: 215px 0 0 15px;
+  }
+
+  /* line 255, ../scss/bear.scss */
+  div.page24 .text-block {
+    width: 290px;
+    margin: 10px 0 0 10px;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  /* line 262, ../scss/bear.scss */
+  div.text-block {
+    width: 180px;
+    top: 2px;
+    left: 2px;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  /* line 270, ../scss/bear.scss */
+  div.text-block p {
+    font-size: 14px;
+  }
+
+  /* line 274, ../scss/bear.scss */
+  div.page0 .text-block {
+    width: 180px;
+    margin: 2px 0 0 195px;
+  }
+
+  /* line 278, ../scss/bear.scss */
+  div.page1 .text-block {
+    width: 180px;
+    margin: 77px 0 0 195px;
+  }
+
+  /* line 282, ../scss/bear.scss */
+  div.page2 .text-block {
+    width: 300px;
+    margin: 1px 0 0 76px;
+  }
+
+  /* line 286, ../scss/bear.scss */
+  div.page3 .text-block {
+    width: 246px;
+    margin: 2px 0 0 2px;
+  }
+
+  /* line 290, ../scss/bear.scss */
+  div.page4 .text-block {
+    width: 307px;
+    margin: 2px 0 0 2px;
+  }
+
+  /* line 294, ../scss/bear.scss */
+  div.page5 .text-block {
+    width: 375px;
+    margin: 174px 0 0 2px;
+  }
+
+  /* line 298, ../scss/bear.scss */
+  div.page6 .text-block {
+    width: 180px;
+    margin: 115px 0 0 2px;
+  }
+
+  /* line 302, ../scss/bear.scss */
+  div.page7 .text-block {
+    width: 375px;
+    margin: 166px 0 0 3px;
+  }
+
+  /* line 306, ../scss/bear.scss */
+  div.page8 .text-block {
+    width: 222px;
+    margin: 106px 0 0 156px;
+  }
+
+  /* line 310, ../scss/bear.scss */
+  div.page9 .text-block {
+    width: 146px;
+    margin: 2px 0 0 233px;
+  }
+
+  /* line 314, ../scss/bear.scss */
+  div.page10 .text-block {
+    width: 377px;
+    margin: 2px 0 0 2px;
+  }
+
+  /* line 318, ../scss/bear.scss */
+  div.page11 .text-block {
+    width: 180px;
+    margin: 2px 0 0 196px;
+  }
+
+  /* line 322, ../scss/bear.scss */
+  div.page12 .text-block {
+    width: 183px;
+    margin: 129px 0 0 2px;
+  }
+
+  /* line 326, ../scss/bear.scss */
+  div.page13 .text-block {
+    width: 180px;
+    margin: 2px 0 0 198px;
+  }
+
+  /* line 330, ../scss/bear.scss */
+  div.page14 .text-block {
+    width: 378px;
+    margin: 2px 0 0 2px;
+  }
+
+  /* line 334, ../scss/bear.scss */
+  div.page15 .text-block {
+    width: 159px;
+    margin: 116px 0 0 220px;
+  }
+
+  /* line 338, ../scss/bear.scss */
+  div.page16 .text-block {
+    width: 180px;
+    margin: 113px 0 0 2px;
+  }
+
+  /* line 342, ../scss/bear.scss */
+  div.page17 .text-block {
+    width: 160px;
+    margin: 2px 0 0 219px;
+  }
+
+  /* line 346, ../scss/bear.scss */
+  div.page18 .text-block {
+    width: 180px;
+    margin: 113px 0 0 200px;
+  }
+
+  /* line 350, ../scss/bear.scss */
+  div.page19 .text-block {
+    width: 180px;
+    margin: 90px 0 0 200px;
+  }
+
+  /* line 354, ../scss/bear.scss */
+  div.page20 .text-block {
+    width: 200px;
+    margin: 90px 0 0 180px;
+  }
+
+  /* line 358, ../scss/bear.scss */
+  div.page21 .text-block {
+    width: 129px;
+    margin: 2px 0 0 2px;
+  }
+
+  /* line 362, ../scss/bear.scss */
+  div.page22 .text-block {
+    /* the block is too big not to split up */
+    width: 100%;
+    background: transparent;
+    /* split the three paragraph into two block */
+    /* glue the first paragrah and the second one */
+  }
+  /* line 368, ../scss/bear.scss */
+  div.page22 .text-block p {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  /* line 374, ../scss/bear.scss */
+  div.page22 .text-block p:nth-child(1) {
+    width: 264px;
+    margin: 1px 0 0 102px;
+    padding: 5px 5px 0;
+    margin-bottom: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  /* line 382, ../scss/bear.scss */
+  div.page22 .text-block p:nth-child(2) {
+    width: 264px;
+    margin: 0 0 0 102px;
+    padding: 0 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 1px;
+    padding-bottom: 8px;
+  }
+  /* line 391, ../scss/bear.scss */
+  div.page22 .text-block p:nth-child(3) {
+    width: 238px;
+    margin: 99px 0 0 128px;
+    padding: 5px 5px 8px 5px;
+    border-radius: 5px;
+  }
+
+  /* line 398, ../scss/bear.scss */
+  div.page23 .text-block {
+    width: 182px;
+    margin: 91px 0 0 2px;
+  }
+
+  /* line 402, ../scss/bear.scss */
+  div.page24 .text-block {
+    width: 197px;
+    margin: 2px 0 0 2px;
+  }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+  /* in case the "controls" covers the texts */
+  /* line 414, ../scss/bear.scss */
+  .text-block {
+    width: 297px;
+    top: -5px;
+    left: -11px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px !important;
+  }
+  /* line 422, ../scss/bear.scss */
+  .text-block p {
+    font-size: 14px;
+  }
+}
+@media (min-width: 320px) and (max-width: 479px) and (orientation: portrait) {
+  /* line 410, ../scss/bear.scss */
+  body {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 319px) {
+  /* in case the "controls" covers the texts */
+  /* line 429, ../scss/bear.scss */
+  body {
+    min-height: 240px;
+  }
+
+  /* line 432, ../scss/bear.scss */
+  .text-block {
+    font-size: 14px !important;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 10px !important;
+  }
+  /* line 438, ../scss/bear.scss */
+  .text-block p {
+    line-height: 1.8em !important;
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>WhyyuBooks</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/settings.css" type="text/css"/>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+</head>
+<body>
+<div id="app" class="clear">
+	<div id="main">
+		<div class="header clear">
+			<span class="back-btn"><i class="fa fa-chevron-left"></i></span>
+			<span class="page-title">Settings</span>
+			<span class="nav-btn"><i class="fa fa-bars"></i></span>
+
+			<div class="nav-menu">
+				<span class="menu-item back-to-book-list-btn"><i class="fa fa-home"></i> Book List</span>
+				<span class="menu-item exit-btn"><i class="fa fa-power-off"></i> Exit</span>
+			</div>
+		</div>
+		<div id="container">
+			<div class="menu-group-container">
+				<div class="menu-item to-sharing-page-btn">Recommend to Friends</div>
+				<div class="menu-item rate-this-app-btn">Rate this APP</div>
+				<div class="menu-item follow-us-on-twitter">Follow Us on Twitter <i class="fr fa fa-twitter-square"></i>
+				</div>
+				<div class="menu-item to-feedback-page-btn">Feedback <i class="fr fa fa-chevron-right"></i></div>
+				<div class="menu-item to-about-page-btn">About <i class="fr fa fa-chevron-right"></i></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="sharing-container">
+	<table class="sharing-table">
+		<tr>
+			<td class="twitter"><img src="images/sharing-icons/twitter-ico.png" alt=""/></td>
+			<td class="facebook"><img src="images/sharing-icons/facebook-ico.png" alt=""/></td>
+			<td class="email"><img src="images/sharing-icons/email-ico.png" alt=""/></td>
+			<td class="share"><img src="images/sharing-icons/share-ico.png" alt=""/></td>
+		</tr>
+		<tr>
+			<td class="twitter">Twitter</td>
+			<td class="facebook">Facebook</td>
+			<td class="email">Email</td>
+			<td class="share">More</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		// refresh the page when go to book list
+		$('.header').on('touchend', '.back-btn, .back-to-book-list-btn', function (e) {
+			e.stopPropagation();
+			location.replace('index.html');
+
+			// drop down nav button
+		}).on('touchend', '.nav-btn', function (e) {
+			e.stopPropagation();
+			$(this).parent().find('.nav-menu').toggle();
+
+			// go to setting page
+		}).on('touchend', '.to-setting-page-btn', function () {
+			location.replace('settings.html');
+
+			// exit app button
+		}).on('touchend', '.exit-btn', function (e) {
+			e.stopPropagation();
+			navigator.app.exitApp();
+		});
+
+		// hide nav menu when start to touch other part
+		$(document).on('touchend', function () {
+			$('.nav-menu').hide(0);
+			$('.sharing-container').hide(0);
+		});
+
+		// follow us page link
+		$('#container').on('touchend', '.follow-us-on-twitter', function () {
+			window.open("https://twitter.com/WhyyuEnglish", "_system");
+
+		}).on('touchend', '.rate-this-app-btn', function () {
+			if (device.platform == "Android") {
+				window.open('market://details?id=com.hundredlanterns.whyyubooks', '_system');
+				return;
+			}
+			// on iPhone this url redirects users to the app store
+			if (device.platform == "iOS") {
+				window.open('http://staging.whyyu.com/apps/whyyubooks/rating/iphone');
+			}
+
+			// feedback page link
+		}).on('touchend', '.to-feedback-page-btn', function () {
+			location.replace('feedback.html');
+
+			// about page link
+		}).on('touchend', '.to-about-page-btn', function () {
+			location.replace('about.html');
+		});
+
+		// sharing plugin
+		// customize each sharing
+		var sharingData = {
+			url: "http:staging.whyyu.com/apps/whyyubooks/download",
+			text: "Come and play with Barry the brown bear. Why does Holly turn into a cute puppy? http://staging.whyyu.com/apps/whyyubooks/download",
+			image: "http://staging.whyyu.com/images/Whyyu-books.png"
+		};
+
+		$('.to-sharing-page-btn').on('touchend', function (e) {
+			e.stopPropagation();
+			$('.sharing-container').toggle(0);
+			// if nav menu is visible, hide it
+			$('.nav-menu').hide(0);
+		});
+
+		// twitter
+		$('.sharing-container').on('touchend', '.twitter', function () {
+			window.plugins.socialsharing.shareViaTwitter(sharingData.text, sharingData.image, null);
+
+			// facebook
+		}).on('touchend', '.facebook', function () {
+			// on iOS
+			window.plugins.socialsharing.shareViaFacebook(sharingData.text, sharingData.image, sharingData.url, function () {
+			}, function () {
+			});
+			// on android, we cannot only copy the text into the clipboard and ask users to paste it
+			window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint(sharingData.text, sharingData.image, sharingData.url, 'Paste it dude!', function () {
+				console.log('share ok')
+			}, function (errormsg) {
+				alert(errormsg)
+			});
+
+			// email
+		}).on('touchend', '.email', function () {
+			window.plugins.socialsharing.shareViaEmail(sharingData.text, 'Whyyu bedtime story book!Barry the Brown Bear!', null, null, null);
+
+			// more
+		}).on('touchend', '.share', function () {
+			window.plugins.socialsharing.share(sharingData.text, null, sharingData.image, sharingData.url);
+		});
+	});
+
+	document.addEventListener('deviceready', onDeviceReady, false);
+
+	// handle device events
+	function onBackKeyDown() {
+		// if sharing overlay is visible, hide it, or go to game list page
+		if ($('.sharing-container').is(':visible')) {
+			$('.sharing-container').hide(0);
+		} else {
+			location.replace('index.html');
+		}
+	}
+
+	function onDeviceReady() {
+		document.addEventListener("backbutton", onBackKeyDown, false);
+	}
+</script>
+</body>
+</html>
